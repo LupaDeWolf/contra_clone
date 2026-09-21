@@ -1,17 +1,24 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // These variables are to hold the Action references
+    InputAction moveAction;
+
+    private void Start()
     {
-        //GameObject.FindWithTag("Player");
-        Debug.Log("Hello Fucker!!");
+        // Find the references to the "Move" and "Jump" actions
+        moveAction = InputSystem.actions.FindAction("Move");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Read the "Move" action value, which is a 2D vector
+        // and the "Jump" action state, which is a boolean value
+
+        Vector2 moveValue = moveAction.ReadValue<Vector2>();
+        // your movement code here
+        transform.Translate(new Vector3(moveValue.x, moveValue.y, 0));
     }
 }
