@@ -16,8 +16,6 @@ public class Movement : MonoBehaviour
     void Update()
     {
         // Read the "Move" action value, which is a 2D vector
-        // and the "Jump" action state, which is a boolean value
-
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
         // your movement code here
         transform.Translate(new Vector3(moveValue.x, moveValue.y, 0));
