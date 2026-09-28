@@ -1,29 +1,34 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] private float moveSpeed = 1f;
-    private PlayerControls playerControls;
-    private Vector2 movement;
+    [SerializeField] private float jumpSpeed = 20f;
+    InputAction moveAction;
+    InputAction jumpAction;
     private Rigidbody2D rigidBody;
 
     private void Awake()
-    {
-        playerControls = new PlayerControls();
+    { 
         rigidBody = GetComponent<Rigidbody2D>();
+        moveAction = InputSystem.actions.FindAction("Move");
+        jumpAction = InputSystem.actions.FindAction("Jump");
     }
 
-    private void OnEnable()
-    {
-        playerControls.Enable();
-    }
+    
 
 
     // Update is called once per frame
     void Update()
     {
-        movement = playerControls.Movement.Move.ReadValue<Vector2>();
-        rigidBody.MovePosition(rigidBody.position + movement *  moveSpeed * Time.fixedDeltaTime);
+        Vector2 moveValue = moveAction.ReadValue<Vector2>();
+        rigidBody.linearVelocityX = moveValue.x * moveSpeed;
+
+        if (jumpAction.WasPressedThisFrame())
+        {
+            rigidBody.linearVelocityY = jumpSpeed;
+        }
     }
 }
