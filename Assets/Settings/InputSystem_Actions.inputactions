@@ -276,6 +276,17 @@
                 },
                 {
                     "name": "",
+                    "id": "d7b6d561-0bf2-45ea-abb5-f5980c596888",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "cbac6039-9c09-46a1-b5f2-4e5124ccb5ed",
                     "path": "<Keyboard>/2",
                     "interactions": "",
@@ -358,6 +369,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "724358d5-cb29-4c8a-9648-c02c87e78ea3",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false

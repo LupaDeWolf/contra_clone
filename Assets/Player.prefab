@@ -373,6 +373,10 @@ PrefabInstance:
       propertyPath: prefabToSpawn
       value: 
       objectReference: {fileID: 1932549345050846958, guid: 7e3886375ebf7db4dbad1fb38f9ec26b, type: 3}
+    - target: {fileID: 8551944211695852686, guid: d99e3833ad2fe6144b2c63e952000b8e, type: 3}
+      propertyPath: timeBetweenSpawn
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

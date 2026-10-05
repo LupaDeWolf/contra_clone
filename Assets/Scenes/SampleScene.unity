@@ -2205,13 +2205,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4657852991231888161, guid: 4e0d7eb01604822429c5bff4cf283b1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657852991231888161, guid: 4e0d7eb01604822429c5bff4cf283b1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657852991231888161, guid: 4e0d7eb01604822429c5bff4cf283b1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4936151895591042508, guid: 4e0d7eb01604822429c5bff4cf283b1f, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5156818121155796208, guid: 4e0d7eb01604822429c5bff4cf283b1f, type: 3}
       propertyPath: timeBetweenSpawn
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5825649169216557126, guid: 4e0d7eb01604822429c5bff4cf283b1f, type: 3}
       propertyPath: m_LocalPosition.x

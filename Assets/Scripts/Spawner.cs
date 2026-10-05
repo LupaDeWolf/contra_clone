@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
         
         if (attackAction.IsPressed() && timeSinceLastSpawn > timeBetweenSpawn)
         {
-            Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
+            Instantiate(prefabToSpawn, transform.position, transform.rotation);
             timeSinceLastSpawn = 0.0f;
         }
         timeSinceLastSpawn += Time.deltaTime;
