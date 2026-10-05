@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         if (jumpAction.WasPressedThisFrame() && isGrounded)
         {
             rigidBody.linearVelocityY = jumpSpeed;
-            isGrounded = false;
+  
         }
 
 
@@ -40,5 +40,10 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)    
     {
         isGrounded = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isGrounded = false;
     }
 }
