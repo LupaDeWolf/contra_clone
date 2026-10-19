@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5825649169216557126}
   - component: {fileID: 337159041338799192}
   - component: {fileID: 966552743257027218}
+  - component: {fileID: 4470619616702349171}
   - component: {fileID: 4388339107029015898}
   - component: {fileID: 2185390843950020382}
   m_Layer: 0
@@ -112,6 +113,19 @@ MonoBehaviour:
   moveSpeed: 3
   jumpSpeed: 4
   isGrounded: 0
+--- !u!114 &4470619616702349171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936151895591042508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812c42f5e8ce68e44891e6b8d4a156bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterController
+  spawner: {fileID: 5156818121155796208}
 --- !u!50 &4388339107029015898
 Rigidbody2D:
   serializedVersion: 5
@@ -387,3 +401,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8185905493374471007, guid: d99e3833ad2fe6144b2c63e952000b8e, type: 3}
   m_PrefabInstance: {fileID: 3548318847245156478}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5156818121155796208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8551944211695852686, guid: d99e3833ad2fe6144b2c63e952000b8e, type: 3}
+  m_PrefabInstance: {fileID: 3548318847245156478}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51621c876f3fd147abc82948e23d399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawner
