@@ -10,8 +10,11 @@ public class CharacterController : MonoBehaviour
     InputAction attackAction;
     InputAction moveAction;
     InputAction jumpAction;
+    
 
     public Spawner spawner;
+
+    public PlayerController playerController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,7 +27,14 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // spawner.isSpawning = attackAction.IsPressed();
-       
+        spawner.isSpawning = attackAction.IsPressed();
+
+        //Moveaction to aim
+
+        Vector2 moveValue = moveAction.ReadValue<Vector2>();
+        spawner.transform.right = moveValue;
+        playerController.jumpPressedThisFrame = jumpAction.IsPressed();
+        Debug.DrawRay(spawner.transform.position, moveValue);
+
     }
 }
