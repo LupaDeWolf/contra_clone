@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,19 +7,25 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float jumpSpeed = 20f;
+
     InputAction moveAction;
+
     InputAction jumpAction;
+    
 
-    public Vector2 moveValue;
-
-    public bool jumpPressedThisFrame;
+    
 
     public bool isGrounded = false;
-    private Rigidbody2D rigidBody;
+    public Rigidbody2D rb;
+
+    public bool isMoving;
 
     private void Awake()
     { 
-        
+        moveAction = InputSystem.actions.FindAction("Move");
+        jumpAction = InputSystem.actions.FindAction("Jump");
+
+        rb = GetComponent<Rigidbody2D>();
     }
 
     
@@ -28,17 +35,20 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+        Vector2 moveValue = moveAction.ReadValue<Vector2>();
+        
+        rb.linearVelocityX = (moveValue.x * moveSpeed);
         
         
 
-        if (jumpPressedThisFrame && isGrounded)
+        if (jumpAction.WasPressedThisFrame() && isGrounded)
         {
-            rigidBody.linearVelocityY = jumpSpeed;
-  
+            rb.linearVelocityY = jumpSpeed;
         }
     }
 
     
+
     private void OnCollisionEnter2D(Collision2D collision)    
     {
         isGrounded = true;

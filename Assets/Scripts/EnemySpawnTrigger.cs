@@ -5,10 +5,17 @@ public class EnemySpawnTrigger : MonoBehaviour
     
     public Spawner spawner;
 
+    private void Awake()
+    {
+        spawner.gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerController>() != null)
         {
+            Debug.Log(gameObject.name + "Detected player!!");
+            
             spawner.gameObject.SetActive(true);
         }
     }
@@ -17,7 +24,9 @@ public class EnemySpawnTrigger : MonoBehaviour
     {
         if (collision.GetComponent<PlayerController>() != null)
         {
-        spawner.gameObject.SetActive(false);
+            Debug.Log(gameObject.name + "No longer detects playere");
+           
+            spawner.gameObject.SetActive(false);
 
         }
     }

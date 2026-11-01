@@ -8,19 +8,15 @@ using UnityEngine.InputSystem;
 public class CharacterController : MonoBehaviour
 {
     InputAction attackAction;
-    InputAction moveAction;
-    InputAction jumpAction;
+    InputAction moveAimAction;
     
 
     public Spawner spawner;
 
-    public PlayerController playerController;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        moveAction = InputSystem.actions.FindAction("Move");
-        jumpAction = InputSystem.actions.FindAction("Jump");
+        moveAimAction = InputSystem.actions.FindAction("Move");
         attackAction = InputSystem.actions.FindAction("Attack");
     }
 
@@ -31,10 +27,10 @@ public class CharacterController : MonoBehaviour
 
         //Moveaction to aim
 
-        Vector2 moveValue = moveAction.ReadValue<Vector2>();
-        spawner.transform.right = moveValue;
-        playerController.jumpPressedThisFrame = jumpAction.IsPressed();
-        Debug.DrawRay(spawner.transform.position, moveValue);
+        Vector2 moveAimValue = moveAimAction.ReadValue<Vector2>();
+        spawner.transform.right = moveAimValue;
+
+        Debug.DrawRay(spawner.transform.position, moveAimValue);
 
     }
 }
