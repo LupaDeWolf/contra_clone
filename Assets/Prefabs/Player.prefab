@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5825649169216557126}
   - component: {fileID: 337159041338799192}
-  - component: {fileID: 966552743257027218}
+  - component: {fileID: 6191935729516139398}
   - component: {fileID: 4470619616702349171}
   - component: {fileID: 4388339107029015898}
   - component: {fileID: 2185390843950020382}
@@ -98,7 +98,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &966552743257027218
+--- !u!114 &6191935729516139398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,10 +109,13 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd6220f95d14e40428c62f6939b901ef, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
   moveSpeed: 3
   jumpSpeed: 4
   isGrounded: 0
+  rb: {fileID: 0}
+  moveInput: {x: 2.61, y: 0}
+  jumpRequested: 0
 --- !u!114 &4470619616702349171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
   spawner: {fileID: 5156818121155796208}
+  movement: {fileID: 0}
 --- !u!50 &4388339107029015898
 Rigidbody2D:
   serializedVersion: 5

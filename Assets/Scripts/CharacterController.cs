@@ -9,15 +9,23 @@ public class CharacterController : MonoBehaviour
 {
     InputAction attackAction;
     InputAction moveAimAction;
-    
+
+
+    InputAction jumpAction;
+
 
     public Spawner spawner;
+
+    public CharacterMovement movement;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        movement = GetComponent<CharacterMovement>();
+
         moveAimAction = InputSystem.actions.FindAction("Move");
         attackAction = InputSystem.actions.FindAction("Attack");
+        jumpAction = InputSystem.actions.FindAction("Jump");
     }
 
     // Update is called once per frame
@@ -31,6 +39,13 @@ public class CharacterController : MonoBehaviour
         spawner.transform.right = moveAimValue;
 
         Debug.DrawRay(spawner.transform.position, moveAimValue);
+
+        movement.moveInput = moveAimValue;
+
+        if (jumpAction.WasPressedThisFrame())
+        {
+            movement.jumpRequested = true;
+        }
 
     }
 }

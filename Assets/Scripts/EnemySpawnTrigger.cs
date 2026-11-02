@@ -12,7 +12,7 @@ public class EnemySpawnTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerController>() != null)
+        if (collision.GetComponent<CharacterController>() != null)
         {
             Debug.Log(gameObject.name + "Detected player!!");
             
@@ -22,7 +22,7 @@ public class EnemySpawnTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerController>() != null)
+        if (collision.GetComponent<CharacterController>() != null)
         {
             Debug.Log(gameObject.name + "No longer detects playere");
            
