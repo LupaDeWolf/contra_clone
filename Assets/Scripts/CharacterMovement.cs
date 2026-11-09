@@ -10,9 +10,10 @@ public class CharacterMovement : MonoBehaviour
 
 
     public bool isGrounded = false;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     public Vector2 moveInput;
+
     public bool jumpRequested = false;
 
     private void Awake()
@@ -32,19 +33,15 @@ public class CharacterMovement : MonoBehaviour
 
         rb.linearVelocityX = (moveInput.x * moveSpeed);
 
-        if (jumpRequested)
-        {
-            jump();
-        }
 
-
+        if (jumpRequested) jump();
     }
 
     public void jump()
     {
         if (isGrounded)
         {
-            Debug.Log("Jump!!");
+
             rb.linearVelocityY = jumpSpeed;
             jumpRequested = false;
 
